@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#293b98">
+  <meta name="description" content="Formulario institucional para la recepción de denuncias del INJUVE.">
+  <title>Recepción de Denuncias | INJUVE</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+      <div class="brand">
+          <img
+              src="assets/img/logo videos y fotos.png"
+              alt="Logotipo oficial de INJUVE"
+              class="brand-logo"
+          >
+      </div>
+      <div class="institution-tag">
+          Canal institucional
+      </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <div class="eyebrow"><span></span> RECEPCIÓN DE INFORMACIÓN</div>
+      <h1>Formulario institucional para la recepción de denuncias</h1>
+      <p class="intro-copy">Instituto Nacional de la Juventud – INJUVE</p>
+      <div class="intro-rule"></div>
+      <p class="description">
+        El presente formulario tiene como finalidad recopilar información relacionada con hechos
+        que se desean poner en conocimiento del Instituto Nacional de la Juventud (INJUVE), a fin
+        de facilitar su análisis y trámite correspondiente. Se solicita proporcionar información
+        clara y detallada.
+      </p>
+      <div class="notice">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <p>Describa los hechos de la manera más clara y precisa posible. Si desconoce algún dato o no
+        cuenta con información para responder una pregunta, puede indicarlo en el espacio correspondiente.</p>
+      </div>
+    </section>
+
+    <section class="form-card" aria-labelledby="form-heading">
+      <div class="form-card-head">
+        <div>
+          <span class="section-kicker">FORMULARIO</span>
+          <h2 id="form-heading">Información sobre los hechos</h2>
+        </div>
+        <span class="question-count">7 preguntas</span>
+      </div>
+
+      <form
+    id="complaintForm"
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycby1tAvytOqYwMv_hr-plah1gf87Z-4AjKFdZoZv1JsEXUiMwFZe53kGnG4OdQqGzg/exec"
+    target="_blank">
+        <div class="progress-area">
+          <div class="progress-label"><span>Progreso del formulario</span><strong id="progressText">0 de 7 respondidas</strong></div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+
+<!-- Identificación voluntaria del denunciante -->
+<section class="identification-section">
+    <h3>Identificación del denunciante</h3>
+
+    <p>
+        Puede presentar su denuncia de forma anónima o proporcionar
+        voluntariamente sus datos de contacto.
+    </p>
+
+    <div class="field">
+        <label for="modalidad">Modalidad de presentación</label>
+
+        <select id="modalidad" name="modalidad" required>
+            <option value="ANONIMA" selected>
+                Presentar denuncia de forma anónima
+            </option>
+            <option value="IDENTIFICADA">
+                Proporcionar mis datos voluntariamente
+            </option>
+        </select>
+    </div>
+
+    <div id="datosIdentificacion" hidden>
+        <div class="field">
+            <label for="nombre">Nombre completo (opcional)</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Escriba su nombre completo">
+        </div>
+
+        <div class="field">
+            <label for="correo">Correo electrónico (opcional)</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="field">
+            <label for="telefono">Número de teléfono (opcional)</label>
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="Número de contacto">
+        </div>
+    </div>
+</section>
+<!-- Fin de identificación -->
+
+
+        <div class="field">
+          <label for="fecha">1. ¿En qué fecha ocurrieron los hechos que desea denunciar?</label>
+          <input id="fecha" name="fecha" type="date" required>
+          <small>Seleccione la fecha en que ocurrieron los hechos. Si no conoce la fecha exacta, podrá indicarlo en la descripción.</small>
+        </div>
+
+        <div class="field">
+          <label for="dependencia">2. ¿En qué dependencia, dirección, departamento o área institucional ocurrieron los hechos?</label>
+          <textarea id="dependencia" name="dependencia" rows="3" placeholder="Escriba la dependencia, dirección, departamento o área..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="hechos">3. Especifique y describa detalladamente los hechos concretos que desea denunciar.</label>
+          <textarea id="hechos" name="hechos" rows="6" placeholder="Describa qué ocurrió, cómo sucedió y cualquier detalle que considere importante..." required></textarea>
+          <small>Puede incluir una secuencia de los acontecimientos y otros detalles que ayuden a comprender lo sucedido.</small>
+        </div>
+
+        <div class="field">
+          <label for="involucrados">4. En caso de contar con información, indique el nombre completo o describa a las personas presuntamente involucradas en los hechos denunciados.</label>
+          <textarea id="involucrados" name="involucrados" rows="4" placeholder="Indique nombres completos o cualquier descripción que permita identificar a las personas..."></textarea>
+          <small>Si no cuenta con esta información, puede dejar el campo sin responder.</small>
+        </div>
+
+        <div class="field">
+          <label for="lugar">5. ¿En qué lugar específico ocurrieron los hechos?</label>
+          <textarea id="lugar" name="lugar" rows="3" placeholder="Indique el lugar, oficina, instalación o ubicación..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="evidencia">6. ¿Cuenta con información adicional, documentos, fotografías u otros elementos que puedan contribuir al esclarecimiento de los hechos? Descríbalos.</label>
+          <textarea id="evidencia" name="evidencia" rows="4" placeholder="Describa la información o los elementos adicionales con los que cuenta..."></textarea>
+          <small>Por ahora, describa los elementos disponibles. No adjunte archivos en este formulario.</small>
+        </div>
+
+        <div class="field">
+          <label for="adicional">7. ¿Desea agregar alguna otra información que considere relevante para el análisis y trámite de la denuncia?</label>
+          <textarea id="adicional" name="adicional" rows="4" placeholder="Agregue cualquier otra información que considere relevante..."></textarea>
+        </div>
+
+        <div class="form-footer">
+          <p><span class="required-star">*</span> Campos obligatorios</p>
+          <button type="submit" id="submitButton">Enviar información <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <p><strong>INJUVE · Instituto Nacional de la Juventud</strong></p>
+      <p>Formulario institucional de recepción de denuncias</p>
+    </footer>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
